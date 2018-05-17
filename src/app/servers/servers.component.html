@@ -1,5 +1,21 @@
-<p>
-  servers works!
-</p>
-<hr>
-<div app-server></div>
+<div class="row">
+  <div class="col-xs-3">
+    <!-- To bind events we use () we can use all the html events without use ON in prefix like onclick is now (click)-->
+    <!-- To bind Element we use []-->
+    <button class="btn btn-primary" [disabled]="!addNewServer" (click)="onAddindNewServer()">Add Server</button> 
+  </div>
+  <div class="col-xs-6">
+    <label>Server Name : 
+      <!-- <input type="text" (input)="updateServerName($event)"> --> <!-- this is One way binding-->
+      <input class="form-controll" [(ngModel)]="serverName" type="text">
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3">
+    <p *ngIf="serverCreated">{{ newServerStatus }}</p> 
+  </div>
+  <!-- <div class="col-xs-6">
+    <p>{{ serverName }}</p>
+  </div> -->
+</div>
